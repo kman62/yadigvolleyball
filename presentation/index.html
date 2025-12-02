@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YaDig Volleyball Championship | Media Partnership Proposal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #E85D04;
+            --primary-dark: #C44D03;
+            --secondary: #1D3557;
+            --accent: #F4A261;
+            --light: #F8F9FA;
+            --white: #FFFFFF;
+            --dark: #2D3436;
+            --success: #00B894;
+            --gradient: linear-gradient(135deg, #E85D04 0%, #F4A261 100%);
+            --gradient-dark: linear-gradient(135deg, #1D3557 0%, #457B9D 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-snap-type: y mandatory;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: var(--dark);
+            color: var(--white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .nav-dot:hover, .nav-dot.active {
+            background: var(--primary);
+            border-color: var(--white);
+            transform: scale(1.3);
+        }
+
+        /* Slide Base */
+        .slide {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px;
+            scroll-snap-align: start;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide-content {
+            max-width: 1200px;
+            width: 100%;
+            z-index: 2;
+        }
+
+        /* Slide 1: Title */
+        .slide-title {
+            background: var(--gradient-dark);
+            text-align: center;
+        }
+
+        .slide-title::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(232, 93, 4, 0.15) 0%, transparent 70%);
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .main-title {
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .main-title span {
+            color: var(--accent);
+        }
+
+        .subtitle {
+            font-size: 1.8rem;
+            opacity: 0.9;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .event-details {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 50px;
+        }
+
+        .event-item {
+            text-align: center;
+        }
+
+        .event-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .event-label {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .event-value {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        /* Slide 2: The Opportunity */
+        .slide-opportunity {
+            background: var(--secondary);
+        }
+
+        .section-label {
+            color: var(--primary);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            margin-bottom: 40px;
+        }
+
+        .opportunity-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .opportunity-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .opportunity-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            background: rgba(255,255,255,0.08);
+        }
+
+        .opp-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .opp-label {
+            font-size: 1.1rem;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+
+        .opp-detail {
+            font-size: 0.9rem;
+            opacity: 0.6;
+            margin-top: 5px;
+        }
+
+        /* Slide 3: Understanding YaDig */
+        .slide-yadig {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+
+        .yadig-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .yadig-text h2 {
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+        }
+
+        .yadig-text h2 span {
+            color: var(--accent);
+        }
+
+        .yadig-text p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .founder-quote {
+            background: rgba(232, 93, 4, 0.1);
+            border-left: 4px solid var(--primary);
+            padding: 25px 30px;
+            margin-top: 30px;
+            border-radius: 0 15px 15px 0;
+        }
+
+        .founder-quote p {
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .founder-quote .author {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .yadig-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 35px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .stat-card .number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-card .label {
+            font-size: 1rem;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+
+        /* Slide 4: Venue */
+        .slide-venue {
+            background: var(--dark);
+        }
+
+        .venue-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .venue-image {
+            background: var(--gradient);
+            border-radius: 30px;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .venue-image::after {
+            content: 'BRUSA';
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            opacity: 0.3;
+        }
+
+        .venue-details h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .venue-tagline {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .venue-features {
+            display: grid;
+            gap: 20px;
+        }
+
+        .venue-feature {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: rgba(255,255,255,0.05);
+            padding: 20px 25px;
+            border-radius: 15px;
+        }
+
+        .venue-feature-icon {
+            font-size: 2rem;
+            width: 60px;
+            text-align: center;
+        }
+
+        .venue-feature-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 3px;
+        }
+
+        .venue-feature-text p {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Slide 5: Packages */
+        .slide-packages {
+            background: linear-gradient(180deg, #1D3557 0%, #0d1b2a 100%);
+            padding: 40px 60px;
+        }
+
+        .packages-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .package-card {
+            background: rgba(255,255,255,0.03);
+            border-radius: 25px;
+            padding: 40px 35px;
+            border: 2px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .package-card.featured {
+            border-color: var(--primary);
+            background: rgba(232, 93, 4, 0.08);
+            transform: scale(1.05);
+        }
+
+        .package-card.featured::before {
+            content: 'RECOMMENDED';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: var(--white);
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .package-tier {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.7;
+            margin-bottom: 5px;
+        }
+
+        .package-name {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .package-price {
+            margin-bottom: 30px;
+        }
+
+        .package-price .currency {
+            font-size: 1.5rem;
+            opacity: 0.7;
+            vertical-align: top;
+        }
+
+        .package-price .amount {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--primary);
+        }
+
+        .package-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .package-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.95rem;
+        }
+
+        .package-features li:last-child {
+            border-bottom: none;
+        }
+
+        .check {
+            color: var(--success);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .package-cta {
+            display: block;
+            text-align: center;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            background: transparent;
+        }
+
+        .package-card.featured .package-cta {
+            background: var(--gradient);
+            border: none;
+            color: var(--white);
+        }
+
+        .package-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(232, 93, 4, 0.3);
+        }
+
+        /* Slide 6: Why Us */
+        .slide-why {
+            background: var(--secondary);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .why-card {
+            display: flex;
+            gap: 25px;
+            background: rgba(255,255,255,0.05);
+            padding: 35px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .why-card:hover {
+            border-color: var(--primary);
+            transform: translateX(10px);
+        }
+
+        .why-icon {
+            font-size: 2.5rem;
+            flex-shrink: 0;
+        }
+
+        .why-text h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .why-text p {
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        /* Slide 7: Competitive Edge */
+        .slide-competitive {
+            background: linear-gradient(135deg, #0d1b2a 0%, #1D3557 100%);
+        }
+
+        .competitive-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .competitors-list {
+            display: grid;
+            gap: 20px;
+        }
+
+        .competitor-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255,255,255,0.05);
+            padding: 20px 25px;
+            border-radius: 15px;
+        }
+
+        .competitor-name {
+            font-weight: 600;
+        }
+
+        .competitor-price {
+            color: var(--accent);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        .our-advantage {
+            background: rgba(232, 93, 4, 0.1);
+            border: 2px solid var(--primary);
+            border-radius: 25px;
+            padding: 40px;
+        }
+
+        .our-advantage h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--accent);
+        }
+
+        .advantage-list {
+            list-style: none;
+        }
+
+        .advantage-list li {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 0;
+            font-size: 1.1rem;
+        }
+
+        .advantage-list li::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        /* Slide 8: CTA */
+        .slide-cta {
+            background: var(--gradient);
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+        }
+
+        .cta-content p {
+            font-size: 1.4rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 40px;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .cta-btn-primary {
+            background: var(--white);
+            color: var(--primary);
+            border: none;
+        }
+
+        .cta-btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+        }
+
+        .contact-item {
+            text-align: center;
+        }
+
+        .contact-item .icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .contact-item .label {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-item .value {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        /* Progress bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: var(--gradient);
+            width: 0%;
+            z-index: 1001;
+            transition: width 0.3s ease;
+        }
+
+        /* Slide counter */
+        .slide-counter {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            opacity: 0.6;
+            z-index: 1000;
+        }
+
+        .slide-counter .current {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* Keyboard hint */
+        .keyboard-hint {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.85rem;
+            opacity: 0.5;
+            z-index: 1000;
+        }
+
+        .key {
+            background: rgba(255,255,255,0.1);
+            padding: 5px 12px;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slide-content > * {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .slide {
+                padding: 40px 30px;
+            }
+
+            .main-title {
+                font-size: 3rem;
+            }
+
+            .packages-grid,
+            .opportunity-grid,
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .package-card.featured {
+                transform: none;
+            }
+
+            .yadig-content,
+            .venue-content,
+            .competitive-content {
+                grid-template-columns: 1fr;
+            }
+
+            .nav {
+                right: 15px;
+            }
+
+            .event-details {
+                flex-wrap: wrap;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .nav {
+                display: none;
+            }
+
+            .keyboard-hint {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Navigation Dots -->
+    <nav class="nav" id="navDots">
+        <div class="nav-dot active" data-slide="0"></div>
+        <div class="nav-dot" data-slide="1"></div>
+        <div class="nav-dot" data-slide="2"></div>
+        <div class="nav-dot" data-slide="3"></div>
+        <div class="nav-dot" data-slide="4"></div>
+        <div class="nav-dot" data-slide="5"></div>
+        <div class="nav-dot" data-slide="6"></div>
+        <div class="nav-dot" data-slide="7"></div>
+    </nav>
+
+    <!-- Slide Counter -->
+    <div class="slide-counter">
+        <span class="current" id="currentSlide">01</span> / 08
+    </div>
+
+    <!-- Keyboard Hint -->
+    <div class="keyboard-hint">
+        <span class="key">↑</span>
+        <span class="key">↓</span>
+        or scroll
+    </div>
+
+    <!-- SLIDE 1: Title -->
+    <section class="slide slide-title" id="slide-0">
+        <div class="slide-content">
+            <span class="badge">Media Partnership Proposal</span>
+            <h1 class="main-title">YaDig Volleyball<br><span>Championship Tournament</span></h1>
+            <p class="subtitle">Professional Photography & Videography Services</p>
+
+            <div class="event-details">
+                <div class="event-item">
+                    <div class="event-icon">📅</div>
+                    <div class="event-label">Date</div>
+                    <div class="event-value">December 14, 2025</div>
+                </div>
+                <div class="event-item">
+                    <div class="event-icon">📍</div>
+                    <div class="event-label">Venue</div>
+                    <div class="event-value">Brusa Volleyball Club</div>
+                </div>
+                <div class="event-item">
+                    <div class="event-icon">🏐</div>
+                    <div class="event-label">Event</div>
+                    <div class="event-value">Season 5 Championship</div>
+                </div>
+                <div class="event-item">
+                    <div class="event-icon">📍</div>
+                    <div class="event-label">Location</div>
+                    <div class="event-value">Temecula, CA</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 2: The Opportunity -->
+    <section class="slide slide-opportunity" id="slide-1">
+        <div class="slide-content">
+            <p class="section-label">The Opportunity</p>
+            <h2 class="section-title">A Growing League Deserves<br>Professional Media Coverage</h2>
+
+            <div class="opportunity-grid">
+                <div class="opportunity-card">
+                    <div class="opp-number">13+</div>
+                    <div class="opp-label">Teams Competing</div>
+                    <div class="opp-detail">Up from 6 teams in Season 1</div>
+                </div>
+                <div class="opportunity-card">
+                    <div class="opp-number">100+</div>
+                    <div class="opp-label">Women Athletes</div>
+                    <div class="opp-detail">Active league participants</div>
+                </div>
+                <div class="opportunity-card">
+                    <div class="opp-number">117%</div>
+                    <div class="opp-label">Growth Rate</div>
+                    <div class="opp-detail">Season over season</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 3: Understanding YaDig -->
+    <section class="slide slide-yadig" id="slide-2">
+        <div class="slide-content">
+            <div class="yadig-content">
+                <div class="yadig-text">
+                    <h2>Understanding <span>YaDig's</span> Mission</h2>
+                    <p>YaDig Volleyball isn't just a league—it's a movement. Founded by Samantha Cooper, it's the only women-exclusive recreational volleyball league in the Temecula-Murrieta area.</p>
+                    <p>The league fills a crucial gap: providing women a dedicated space to play, compete, and build community outside of co-ed environments.</p>
+
+                    <div class="founder-quote">
+                        <p>"It's about reclaiming joy, building community, and proving that it's never too late to return to what you love."</p>
+                        <span class="author">— Samantha Cooper, Founder</span>
+                    </div>
+                </div>
+
+                <div class="yadig-stats">
+                    <div class="stat-card">
+                        <div class="number">5</div>
+                        <div class="label">Seasons Strong</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">3</div>
+                        <div class="label">Years Running</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">1st</div>
+                        <div class="label">Women-Only League</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">∞</div>
+                        <div class="label">Sisterhood</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 4: Venue -->
+    <section class="slide slide-venue" id="slide-3">
+        <div class="slide-content">
+            <div class="venue-content">
+                <div class="venue-image">🏟️</div>
+
+                <div class="venue-details">
+                    <p class="section-label">Championship Venue</p>
+                    <h2>Brusa Volleyball Club</h2>
+                    <p class="venue-tagline">"House of the Hummingbirds"</p>
+
+                    <div class="venue-features">
+                        <div class="venue-feature">
+                            <div class="venue-feature-icon">🏐</div>
+                            <div class="venue-feature-text">
+                                <h4>7 Indoor Courts</h4>
+                                <p>Professional-grade playing surfaces</p>
+                            </div>
+                        </div>
+                        <div class="venue-feature">
+                            <div class="venue-feature-icon">💡</div>
+                            <div class="venue-feature-text">
+                                <h4>Excellent Lighting</h4>
+                                <p>Ideal conditions for photography</p>
+                            </div>
+                        </div>
+                        <div class="venue-feature">
+                            <div class="venue-feature-icon">🏆</div>
+                            <div class="venue-feature-text">
+                                <h4>Olympic-Level Athletes</h4>
+                                <p>Has hosted elite training & events</p>
+                            </div>
+                        </div>
+                        <div class="venue-feature">
+                            <div class="venue-feature-icon">📍</div>
+                            <div class="venue-feature-text">
+                                <h4>Temecula, CA</h4>
+                                <p>Heart of the Inland Empire</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 5: Packages -->
+    <section class="slide slide-packages" id="slide-4">
+        <div class="slide-content">
+            <div class="packages-header">
+                <p class="section-label">Service Packages</p>
+                <h2 class="section-title">Choose Your Coverage Level</h2>
+            </div>
+
+            <div class="packages-grid">
+                <!-- Bronze -->
+                <div class="package-card">
+                    <div class="package-tier">Entry Level</div>
+                    <h3 class="package-name">Bronze</h3>
+                    <div class="package-price">
+                        <span class="currency">$</span>
+                        <span class="amount">225</span>
+                    </div>
+                    <ul class="package-features">
+                        <li><span class="check">✓</span> 60-90 min coverage (1 match)</li>
+                        <li><span class="check">✓</span> 50+ high-res action shots</li>
+                        <li><span class="check">✓</span> 1 posed team photo</li>
+                        <li><span class="check">✓</span> Digital gallery (90 days)</li>
+                        <li><span class="check">✓</span> 48-hour delivery</li>
+                        <li><span class="check">✓</span> Personal use rights</li>
+                    </ul>
+                    <button class="package-cta">Select Bronze</button>
+                </div>
+
+                <!-- Silver (Featured) -->
+                <div class="package-card featured">
+                    <div class="package-tier">Most Popular</div>
+                    <h3 class="package-name">Silver</h3>
+                    <div class="package-price">
+                        <span class="currency">$</span>
+                        <span class="amount">475</span>
+                    </div>
+                    <ul class="package-features">
+                        <li><span class="check">✓</span> Full tournament coverage (6-8 hrs)</li>
+                        <li><span class="check">✓</span> 200+ photos across all teams</li>
+                        <li><span class="check">✓</span> 2-3 min highlight reel</li>
+                        <li><span class="check">✓</span> 3-5 social media clips</li>
+                        <li><span class="check">✓</span> All team photos + ceremony</li>
+                        <li><span class="check">✓</span> 72-hour photo / 5-day video</li>
+                        <li><span class="check">✓</span> League promotional rights</li>
+                    </ul>
+                    <button class="package-cta">Select Silver</button>
+                </div>
+
+                <!-- Gold -->
+                <div class="package-card">
+                    <div class="package-tier">Premium</div>
+                    <h3 class="package-name">Gold</h3>
+                    <div class="package-price">
+                        <span class="currency">$</span>
+                        <span class="amount">750</span>
+                    </div>
+                    <ul class="package-features">
+                        <li><span class="check">✓</span> Everything in Silver, PLUS:</li>
+                        <li><span class="check">✓</span> 300+ photos + creative shots</li>
+                        <li><span class="check">✓</span> 10 individual player highlights</li>
+                        <li><span class="check">✓</span> Behind-the-scenes content</li>
+                        <li><span class="check">✓</span> 3-5 player/coach interviews</li>
+                        <li><span class="check">✓</span> 24-hour priority delivery</li>
+                        <li><span class="check">✓</span> Raw footage access</li>
+                        <li><span class="check">✓</span> Full commercial rights</li>
+                    </ul>
+                    <button class="package-cta">Select Gold</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 6: Why Us -->
+    <section class="slide slide-why" id="slide-5">
+        <div class="slide-content">
+            <p class="section-label">Why Partner With Us</p>
+            <h2 class="section-title" style="margin-bottom: 50px;">What Sets Us Apart</h2>
+
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">⚡</div>
+                    <div class="why-text">
+                        <h3>Fastest Turnaround</h3>
+                        <p>24-72 hour photo delivery means you can share content while the excitement is still fresh. Competitors take 5-7 days.</p>
+                    </div>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">📱</div>
+                    <div class="why-text">
+                        <h3>Social-Ready Content</h3>
+                        <p>We deliver optimized clips for Instagram, TikTok, and Facebook—not just raw files. Ready to post immediately.</p>
+                    </div>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🎬</div>
+                    <div class="why-text">
+                        <h3>Photo + Video Bundle</h3>
+                        <p>No competitor offers comprehensive photo AND video packages. Others specialize in one or the other.</p>
+                    </div>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">💜</div>
+                    <div class="why-text">
+                        <h3>We Understand Your Mission</h3>
+                        <p>We're not just documenting a tournament—we're capturing the sisterhood, community, and empowerment that makes YaDig special.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 7: Competitive Edge -->
+    <section class="slide slide-competitive" id="slide-6">
+        <div class="slide-content">
+            <div class="competitive-content">
+                <div>
+                    <p class="section-label">Market Comparison</p>
+                    <h2 class="section-title" style="margin-bottom: 40px;">Competitive Pricing</h2>
+
+                    <div class="competitors-list">
+                        <div class="competitor-item">
+                            <span class="competitor-name">Bamboo Productions</span>
+                            <span class="competitor-price">$150-$240 (photo only)</span>
+                        </div>
+                        <div class="competitor-item">
+                            <span class="competitor-name">MVP Photography</span>
+                            <span class="competitor-price">$600 (photo + video)</span>
+                        </div>
+                        <div class="competitor-item">
+                            <span class="competitor-name">Doejah Black Photography</span>
+                            <span class="competitor-price">$225-$450 (photo only)</span>
+                        </div>
+                        <div class="competitor-item">
+                            <span class="competitor-name">Complete Performance</span>
+                            <span class="competitor-price">$75-$300 (AI analytics)</span>
+                        </div>
+                        <div class="competitor-item" style="border: 2px solid var(--primary);">
+                            <span class="competitor-name" style="color: var(--primary); font-weight: 700;">Our Silver Package</span>
+                            <span class="competitor-price" style="color: var(--success);">$475 (photo + video)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="our-advantage">
+                    <h3>Your Advantage</h3>
+                    <ul class="advantage-list">
+                        <li>Only bundled photo + video offering</li>
+                        <li>Social media optimization included</li>
+                        <li>Fastest delivery in market</li>
+                        <li>Human creativity, not AI automation</li>
+                        <li>Story-driven content that connects</li>
+                        <li>Full rights for league promotion</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 8: CTA -->
+    <section class="slide slide-cta" id="slide-7">
+        <div class="slide-content cta-content">
+            <h2>Let's Capture Your<br>Championship Story</h2>
+            <p>Ready to give your players and community professional media coverage that celebrates sisterhood, competition, and joy?</p>
+
+            <div class="cta-buttons">
+                <a href="mailto:info@yadigvolleyball.org" class="cta-btn cta-btn-primary">
+                    📧 Get in Touch
+                </a>
+                <a href="tel:6193441053" class="cta-btn cta-btn-secondary">
+                    📞 Call Now
+                </a>
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="icon">📧</div>
+                    <div class="label">Email</div>
+                    <div class="value">info@yadigvolleyball.org</div>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">📞</div>
+                    <div class="label">Phone</div>
+                    <div class="value">(619) 344-1053</div>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">📅</div>
+                    <div class="label">Event Date</div>
+                    <div class="value">December 14, 2025</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Navigation and progress tracking
+        const slides = document.querySelectorAll('.slide');
+        const navDots = document.querySelectorAll('.nav-dot');
+        const progressBar = document.getElementById('progressBar');
+        const currentSlideEl = document.getElementById('currentSlide');
+
+        // Update progress and navigation on scroll
+        function updateProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (scrollTop / docHeight) * 100;
+            progressBar.style.width = progress + '%';
+
+            // Determine current slide
+            let currentIndex = 0;
+            slides.forEach((slide, index) => {
+                const rect = slide.getBoundingClientRect();
+                if (rect.top <= window.innerHeight / 2) {
+                    currentIndex = index;
+                }
+            });
+
+            // Update nav dots
+            navDots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+
+            // Update counter
+            currentSlideEl.textContent = String(currentIndex + 1).padStart(2, '0');
+        }
+
+        window.addEventListener('scroll', updateProgress);
+
+        // Click navigation
+        navDots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const slideIndex = parseInt(dot.dataset.slide);
+                slides[slideIndex].scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            let currentIndex = 0;
+            slides.forEach((slide, index) => {
+                const rect = slide.getBoundingClientRect();
+                if (rect.top <= window.innerHeight / 2) {
+                    currentIndex = index;
+                }
+            });
+
+            if (e.key === 'ArrowDown' || e.key === ' ') {
+                e.preventDefault();
+                if (currentIndex < slides.length - 1) {
+                    slides[currentIndex + 1].scrollIntoView({ behavior: 'smooth' });
+                }
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                if (currentIndex > 0) {
+                    slides[currentIndex - 1].scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+
+        // Initial progress update
+        updateProgress();
+    </script>
+</body>
+</html>
