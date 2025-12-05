@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YaDig Volleyball | Resources</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #1D3557 0%, #457B9D 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            width: 100%;
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .logo h1 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        .logo h1 span {
+            color: #F4A261;
+        }
+        .logo p {
+            color: rgba(255,255,255,0.8);
+            font-size: 1.1rem;
+        }
+        .cards {
+            display: grid;
+            gap: 20px;
+        }
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            display: block;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        .card h2 {
+            color: #1D3557;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        .card p {
+            color: #636E72;
+            line-height: 1.6;
+        }
+        .card .arrow {
+            display: inline-block;
+            margin-top: 15px;
+            color: #E85D04;
+            font-weight: 600;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <h1>Ya<span>Dig</span> Volleyball</h1>
+            <p>Where Sisterhood Meets Spikes & Serves</p>
+        </div>
+
+        <div class="cards">
+            <a href="presentation/index.html" class="card">
+                <div class="card-icon">🎬</div>
+                <h2>Media Partnership Presentation</h2>
+                <p>Championship Tournament pitch deck for December 14, 2025 at Brusa Volleyball Club. Includes pricing packages and competitive analysis.</p>
+                <span class="arrow">View Presentation →</span>
+            </a>
+
+            <a href="mockup/index.html" class="card">
+                <div class="card-icon">🎨</div>
+                <h2>Website Redesign Mockup</h2>
+                <p>Interactive mockup implementing UX/UI audit recommendations. Mobile-responsive design with modern conversion optimization.</p>
+                <span class="arrow">View Mockup →</span>
+            </a>
+
+            <a href="WEBSITE_AUDIT_REPORT.md" class="card">
+                <div class="card-icon">📊</div>
+                <h2>Website Audit Report</h2>
+                <p>Comprehensive analysis including ICP, competitive landscape, SEO recommendations, and player acquisition strategies.</p>
+                <span class="arrow">View Report →</span>
+            </a>
+        </div>
+
+        <footer>
+            <p>© 2025 YaDig Volleyball | Temecula, CA</p>
+        </footer>
+    </div>
+</body>
+</html>
